@@ -1,0 +1,22 @@
+{
+  "Análisis II (C) - Teórica": {
+    "Lunes": "Pabellón 2",
+    "Jueves": "Pabellón 1"
+  },
+  "Análisis II (C) - Práctica": {
+    "Lunes": "Pabellón 2",
+    "Miércoles": "Pabellón 2",
+    "Jueves": "Pabellón 1"
+  },
+  "Álgebra I - Teórica": {
+    "Martes": "Pabellón 1",
+    "Viernes": "Pabellón 2"
+  },
+  "Álgebra I - Práctica": {
+    "Martes": "Pabellón 1",
+    "Viernes": "Pabellón 2"
+  },
+  "Álgebra I - Laboratorio": {
+    "Miércoles": "Pabellón 1"
+  }
+}

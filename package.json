@@ -1,0 +1,30 @@
+{
+  "name": "chongobot",
+  "version": "1.0.0",
+  "description": "Bot de uso personal para un grupo de amigos en telegram",
+  "main": "index.js",
+  "dependencies": {
+    "moment": "^2.19.1",
+    "node-telegram-bot-api": "^0.29.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iglosiggio/chongobot.git"
+  },
+  "keywords": [
+    "bot",
+    "telegram",
+    "custom",
+    "personal-use"
+  ],
+  "author": "Ignacio E. Losiggio",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/iglosiggio/chongobot/issues"
+  },
+  "homepage": "https://github.com/iglosiggio/chongobot#readme"
+}

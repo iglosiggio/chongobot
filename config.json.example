@@ -1,0 +1,6 @@
+{
+  "token": "TELEGRAM_TOKEN",
+  "semana": ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+  "dueño": "owner_id"
+  "autorizados": [channel_id, "CHANNEL_HANDLE", user_id, "USER_HANDLE"]
+}
