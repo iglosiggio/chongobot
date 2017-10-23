@@ -2,30 +2,30 @@
   "título": "Análisis II (C) - Teórica",
   "tipo": "recurrente",
   "recurrencia": ["Lunes", "Jueves"],
-  "horario": "18:00 - 20:00",
+  "cuándo": "18:00 - 20:00",
   "plugin": "materia"
 }, {
   "título": "Análisis II (C) - Práctica",
   "tipo": "recurrente",
   "recurrencia": ["Lunes", "Miércoles", "Jueves"],
-  "horario": "20:00 - 22:00",
+  "cuándo": "20:00 - 22:00",
   "plugin": "materia"
 }, {
   "título": "Álgebra I - Teórica",
   "tipo": "recurrente",
   "recurrencia": ["Martes", "Viernes"],
-  "horario": "20:00 - 22:00",
+  "cuándo": "20:00 - 22:00",
   "plugin": "materia"
 }, {
   "título": "Álgebra I - Práctica",
   "tipo": "recurrente",
   "recurrencia": ["Martes", "Viernes"],
-  "horario": "17:00 - 20:00",
+  "cuándo": "17:00 - 20:00",
   "plugin": "materia"
 }, {
   "título": "Álgebra I - Laboratorio",
   "tipo": "recurrente",
   "recurrencia": ["Miércoles"],
-  "horario": "17:00 - 20:00",
+  "cuándo": "17:00 - 20:00",
   "plugin": "materia"
 }]

@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "título": "Nace el chongobot",
+    "fecha": "23/10/2017",
+    "tipo": "eventual",
+    "cuándo": "23/10/2017"
+  },
+  {
+    "tipo": "eventual",
+    "título": "¿¿Entregan los parciales del labo??",
+    "fecha": "25/10/2017",
+    "cuándo": "25/10/2017"
+  }
+]
