@@ -81,10 +81,9 @@ bot.onText(/^\/editarevento_([0-9]+) ([^ ]+) (.+)$/, comando((msg, [texto, event
 /* TODO: modularizar esto junto al resto del código */
 (function() {
   const ahora = moment();
-  const horario_alarma = '11:30';
-  const grupos_alarma = [-235836218];
-  const formato_alarma = ['hh:dd', 'hh:dd:ss'];
-  const alarma = moment(horario_alarma, formato_alarma, true);
+  const formato_alarma = ['hh:mm', 'hh:mm:ss'];
+  const {horario, grupos} = config.alarma;
+  const alarma = moment(horario, formato_alarma, true);
 
   function recordatorio() {
     const fecha = moment();
@@ -92,7 +91,7 @@ bot.onText(/^\/editarevento_([0-9]+) ([^ ]+) (.+)$/, comando((msg, [texto, event
 
     if(!eventos_texto) return;
 
-    grupos_alarma.forEach(grupo =>
+    grupos.forEach(grupo =>
       bot.sendMessage(grupo, eventos_texto, {parse_mode: 'markdown'}));
   }
 
@@ -100,7 +99,7 @@ bot.onText(/^\/editarevento_([0-9]+) ([^ ]+) (.+)$/, comando((msg, [texto, event
 
   setTimeout(() => {
     recordatorio();
-    setInterval(recordatorio, 24*69*60*1000);
+    setInterval(recordatorio, 24*60*60*1000);
   }, alarma - ahora);
 })();
 
