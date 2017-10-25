@@ -8,6 +8,7 @@ const {token, semana, dueño, autorizados, formatos_fecha} = config;
 const TelegramBot = require('node-telegram-bot-api');
 const moment = require('moment');
 const fs = require('fs');
+const crypto = require('crypto');
 
 const bot = new TelegramBot(token, {polling: true});
 
@@ -76,6 +77,40 @@ bot.onText(/^\/editarevento_([0-9]+) ([^ ]+) (.+)$/, comando((msg, [texto, event
   guardar_eventos(eventos);
 
   bot.sendMessage(chatId, `Modificado! Si te equivotaste de vuelta usá /editarevento_${eventoId}`);
+}));
+
+bot.onText(/^\/(pregunta|preguntar) (.*)/, comando((msg, [texto, verbo, pregunta]) => {
+  const chatId = msg.chat.id;
+  const hash = crypto.createHash('sha256');
+
+  pregunta.replace(/¡|!|¿|\?/g, '')
+          .toLowerCase()
+          .split(/ |\n|\t/)
+          .sort()
+          .forEach(palabra => hash.update(palabra));
+
+  const hash_index = hash.digest('hex')[0];
+
+  const respuestas = {
+    "0": "Obvio!",
+    "1": "Yup.",
+    "2": "Mmm...\nmmm...\nmmmmmm....\n\nehm, ponele que sí, ponele (?",
+    "3": "Por su pollo",
+    "4": "Sí.",
+    "5": "Yo creo que sí Kent",
+    "6": "Of course",
+    "7": "OBVIO QUE SÍ; yo si estuviera en tu lugar no hubiera dudado como un gil",
+    "8": "Jamás",
+    "9": "No.",
+    "a": "Ni en pedo",
+    "b": "Ehhh, yo que vos no",
+    "c": "NO\n\n(es una trampa)",
+    "d": "NEIN",
+    "e": "Lo dudo mucho",
+    "f": "No lo creo",
+  };
+
+  bot.sendMessage(chatId, respuestas[hash_index]);
 }));
 
 /* TODO: modularizar esto junto al resto del código */
