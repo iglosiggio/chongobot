@@ -49,11 +49,13 @@ bot.onText(/^\/agendar ([^ ]+) (.+)$/, comando((msg, [texto, fecha, título]) =>
     return;
   }
 
+  const evento_texto = describir_evento(evento, null, config);
   const eventoId = agregar_evento(evento, eventos);
-  bot.sendMessage(chatId, `Agendado! En caso de error usá /editarevento_${eventoId}`);
+
+  bot.sendMessage(chatId, `${evento_texto}\n\nAgendado! En caso de error usá /editarevento\\_${eventoId}`, {parse_mode: 'markdown'});
 }));
 
-bot.onText(/^\/evento_([0-9]+)/, comando((msg, [texto, eventoId]) => {
+bot.onText(/^\/(evento|verevento)_([0-9]+)/, comando((msg, [texto, verbo, eventoId]) => {
   const chatId = msg.chat.id;
   const evento = eventos[eventoId];
 
@@ -74,12 +76,14 @@ bot.onText(/^\/editarevento_([0-9]+) ([^ ]+) (.+)$/, comando((msg, [texto, event
     evento[dato] = nuevoEvento[dato];
   }
 
+  const evento_texto = describir_evento(evento, null, config);
+
   guardar_eventos(eventos);
 
-  bot.sendMessage(chatId, `Modificado! Si te equivotaste de vuelta usá /editarevento_${eventoId}`);
+  bot.sendMessage(chatId, `${evento_texto}\nModificado! Si te equivotaste de vuelta usá /editarevento\\_${eventoId}`, {parse_mode: 'markdown'});
 }));
 
-bot.onText(/^\/(pregunta|preguntar) (.*)/, comando((msg, [texto, verbo, pregunta]) => {
+bot.onText(/^\/(pregunta|preguntar) (.+)/, comando((msg, [texto, verbo, pregunta]) => {
   const chatId = msg.chat.id;
   const hash = crypto.createHash('sha256');
 
