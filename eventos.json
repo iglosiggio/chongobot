@@ -7,8 +7,38 @@
   },
   {
     "tipo": "eventual",
-    "título": "¿¿Entregan los parciales del labo??",
+    "título": "Entrega de parciales del labo!",
     "fecha": "25/10/2017",
     "cuándo": "25/10/2017"
+  },
+  {
+    "tipo": "eventual",
+    "título": "Escanear y subir los parciales",
+    "fecha": "27/10/2017",
+    "cuándo": "27/10/2017"
+  },
+  {
+    "tipo": "eventual",
+    "título": "Devolverle los parciales a Gonzaxxx",
+    "fecha": "26/10/2017",
+    "cuándo": "26/10/2017"
+  },
+  {
+    "tipo": "eventual",
+    "título": "Fecha limite del TP del labo (enviar por mail)",
+    "fecha": "14/11/2017",
+    "cuándo": "14/11/2017"
+  },
+  {
+    "tipo": "eventual",
+    "título": "Coloquio del TP del labo (17:00-20:00)",
+    "fecha": "22/11/2017",
+    "cuándo": "22/11/2017"
+  },
+  {
+    "tipo": "eventual",
+    "título": "Parcial de Álgebra",
+    "fecha": "28/11/2017",
+    "cuándo": "28/11/2017"
   }
 ]
