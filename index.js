@@ -143,8 +143,8 @@ bot.onText(/^\/(pregunta|preguntar) (.+)/, comando((msg, [texto, verbo, pregunta
     if(!eventos_texto) return;
 
     const mensajes = grupos.map(grupo =>
-      bot.sendMessage(grupo, eventos_texto, {parse_mode: 'markdown'}))
-         .catch(log_catch(`alarma_${grupo}`));
+      bot.sendMessage(grupo, eventos_texto, {parse_mode: 'markdown'})
+         .catch(log_catch(`alarma_${grupo}`)));
 
     return Promise.all(mensajes);
   }
