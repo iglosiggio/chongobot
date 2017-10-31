@@ -31,7 +31,7 @@ bot.onText(/^\/(sugerencia|recordar|sugerir).*/, comando(msg => {
   const msgId = msg.message_id;
 
   const fw = bot.forwardMessage(dueño, msg.chat.id, msgId)
-                .catch(log_catch('sugerir_forward');
+                .catch(log_catch('sugerir_forward'));
   const respuesta = bot.sendMessage(chatId, 'Gracias! Ahí lo molesto a nacho.')
                        .catch(log_catch('sugerir_mensaje'));
   return Promise.all([fw, respuesta]);
@@ -235,6 +235,6 @@ function comando(cmd) {
 
 function log_catch(lugar) {
   return function(error) {
-    console.error(``[ERROR:${lugar}]`, error.message, error.code)
+    console.error(`[ERROR:${lugar}]`, error.message, error.code)
   }
 }
